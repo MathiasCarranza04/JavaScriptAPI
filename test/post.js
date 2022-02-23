@@ -10,7 +10,7 @@ const Token = '4a5cedbe79b86bc4f09e74157dc4727b6a1b4f7e341eade34867f255a8dcc271'
 
 var postId, userId;
 
-describe.only('USERS POSTS', () => {
+describe('USERS POSTS', () => {
     
 
     before(async () => {
@@ -72,11 +72,9 @@ describe('NEGATIVE TEST ', () => {
         const postRes = await request
             .post('posts')
             .send(data)
-            console.log(postRes.body)
+            console.log("El response es " + postRes)
             await expect(postRes.status).to.equal(401);
             await expect(postRes.body.message).to.eq('Authentication failed');
-
-            console.log("The exit code is : " + postRes.status)
             
         
     });
@@ -86,7 +84,7 @@ describe('NEGATIVE TEST ', () => {
 
 
     //it will fail cuz im not sending the field body in the json
-    it('422 Validation Failed', async () => {
+    it.only('422 Validation Failed', async () => {
 
         const data = {
             user_id: userId,  
@@ -102,8 +100,8 @@ describe('NEGATIVE TEST ', () => {
 
 
             await expect(postRes.status).to.equal(422);
-           // await expect(postRes.body.data[0].field).to.eq('body'); //expecting that the body require is in the msg
-          //  await expect(postRes.data[0].message).to.equal("can't be blank");
+            await expect(postRes.body[2].field).to.eq('body'); //expecting that the body require is in the msg
+            await expect(postRes.body[2].message).to.equal("can't be blank");
 
             console.log("The exit code is : " + postRes.status)
             
