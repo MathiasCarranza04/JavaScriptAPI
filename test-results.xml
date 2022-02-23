@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.4600" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-02-23T12:50:12" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="USERS POSTS" timestamp="2022-02-23T12:50:12" tests="2" file="C:\Users\mcarranza\OneDrive - ENDAVA\Desktop\api\test\post.js" time="5.4590" failures="0">
+    <testcase name="USERS POSTS POST USERS" time="1.7100" classname="POST USERS">
+    </testcase>
+    <testcase name="USERS POSTS GET CASE" time="1.7220" classname="GET CASE">
+    </testcase>
+  </testsuite>
+</testsuites>
